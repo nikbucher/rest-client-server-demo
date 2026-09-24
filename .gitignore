@@ -1,0 +1,15 @@
+# Gradle
+.gradle/
+build/
+
+# Kotlin
+.kotlin/
+
+# IDE
+.idea/
+*.iml
+out/
+bin/
+
+# local agent files
+.agents/
