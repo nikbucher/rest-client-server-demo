@@ -31,8 +31,9 @@ public class Server {
 	}
 
 	@PostMapping("/")
-	public void post(@RequestBody DateObject dateObject) {
+	public DateObject post(@RequestBody DateObject dateObject) {
 		log.info("date object= {}", dateObject);
+		return dateObject;
 	}
 
 	@Bean
