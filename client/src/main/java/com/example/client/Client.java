@@ -30,10 +30,9 @@ public class Client {
 		return args -> {
 			ZonedDateTime zoned = DATE.atZone(ZoneId.of("Europe/Paris"));
 			DateObject sent = new DateObject(DATE, zoned.toOffsetDateTime(), zoned);
-			restClient.post().uri("/").body(sent).retrieve().toBodilessEntity();
-			DateObject received = restClient.get().uri("/").retrieve().body(DateObject.class);
+			DateObject echoed = restClient.post().uri("/").body(sent).retrieve().body(DateObject.class);
 			log.info("sent     = {}", sent);
-			log.info("received = {}", received);
+			log.info("echoed   = {}", echoed);
 		};
 	}
 }
